@@ -1,38 +1,626 @@
-.App {
-  text-align: center;
-}
+@media only screen and (max-width: 885px) {
+  .navigation {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 50px;
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .navigationOnglet {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 50px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+@media only screen and (min-width: 885px) {
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 100px;
+  }
+
+  .navigationOnglet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 100px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 490px) {
+  .services {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /*margin-top: 50px;*/
+  }
+
+  .imageService {
+    width: auto;
+    height: 300px;
+    border-radius: 10px;
+  }
+
+  .texteService {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 25px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .imageService {
+    width: auto;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .texteService {
+    display: flex;
+    flex-direction: column;
+    border: red solid 3px;
+    width: 300px;
+  }
+
+  .nomService,
+  .paragrapheService {
+    width: auto;
+    border: blue solid 2px;
+  }
+}
+
+/*.texteService {
+  flex-wrap: wrap;
   flex-direction: column;
+  height: auto;
+  width: 400px;
+}*/
+
+
+/*.services {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 50px;
+}*/
+
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  box-sizing: inherit;
+}
+
+.garageLogo {
+  cursor: pointer;
+}
+
+.boutonEspacePro {
+  background-color: white;
+  color: #D94350;
+  margin-top: 10px;
+}
+
+.boutonEspacePro:hover {
+  background-color: #D94350;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  text-align: center;
+}
+
+.filtreVoiture,
+label,
+span {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.boutonFiltre {
+  margin-top: 20px;
+}
+
+.filtrePrix,
+.filtreAnnee,
+.filtreKilometrage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listeDeVoitures {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.voiture,
+p {
+  margin: 10px;
+  text-align: center;
+}
+
+.voiture {
+  border: lightgray solid 1px;
+  width: 200px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+
+.imageVoiture {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 10px;
+}
+
+.detailsVoiture,
+button {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.titreAnnonce {
+  margin: 50px;
+  text-align: center;
+}
+
+.conteneurDetailVoiture {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 50px;
+  margin-bottom: 200px;
+}
+
+.imageDetailVoiture {
+  height: auto;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.infosVoiture {
+  margin-top: 20px;
+}
+
+.boutonContactDetailVoiture,
+.boutonformulaireContactDetailVoiture {
+  display: flex;
+  justify-content: center;
+}
+
+.boutonContactDetailVoitureMessage,
+.boutonContactDetailVoitureTelephone {
+  margin: 25px;
+}
+
+.myModal {
+  width: 400px;
+  height: auto;
+  padding-bottom: 20px;
+  background-color: white;
+  border: solid lightgray 1px;
+  text-align: center;
+  top: 200px;
+  right: 500px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.myModal2 {
+  width: 60%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  border: solid lightgray 1px;
+  text-align: center;
+  top: 15%;
+  right: 20%;
+  position: absolute;
+  border-radius: 10px;
+}
+
+#formulaireContactDetailVoiture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boutonformulaireContactDetailVoiture {
+  gap: 50px;
+  margin-top: 20px
+}
+
+legend {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+input,
+textarea {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: solid gray 1px;
+}
+
+#formulaireContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+
+textarea {
+  resize: none;
+}
+
+.selectRendezVous {
+  margin-top: 10px;
+}
+
+.boutonRendezVousFormulaire {
+  margin-top: 20px;
+}
+
+.boutonContactEnvoyer {
+  margin-top: 20px;
+}
+
+.buttonAjoutAvis {
+  margin: 50px;
+}
+
+.formulaireaAjoutAvis {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputNameAjoutAvis,
+.annulerAjoutAvis,
+.confimerAjoutAvis {
+  margin: 20px;
+}
+
+.messageAjoutAvis {
+  margin-top: 20px;
+}
+
+.inputNameAjoutAvis {
+  margin-bottom: -25px;
+}
+
+.conteneurAvis {
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listeAvis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avisClient {
+  border: lightgray solid 1px;
+  margin: 20px;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 10px;
+}
+
+.nomClientNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.positionStarRating {
+  display: inline-flex;
+  /*height: auto;
+  border: solid orange 2px;*/
+}
+
+.radioStar {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  align-items: center;
+  position: relative;
+  bottom: 0%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #262526;
+  margin-top: 50px;
+  color: white;
+}
+
+.buttonRendezVous {
+  margin-top: 25px;
+}
+
+.horaireGarage {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin: 10px;
+}
+
+tr {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHoraire {
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+.modalRdv {
+  width: 50%;
+  padding: 40px;
+  height: auto;
+  background-color: white;
+  border: solid lightgray 1px;
+  text-align: center;
+  top: 10%;
+  right: 25%;
+  position: absolute;
+  border-radius: 50px;
+}
+
+.priseRdv {
+  display: flex;
+  justify-content: center;
+}
+
+#nom,
+#prenom,
+#email,
+#phone,
+#date,
+#creneau,
+#heureRendezVous,
+#confirmer,
+#annuler {
+  margin-bottom: 10px;
+}
+
+#heureRendezVous,
+#date {
+  text-align: center;
+}
+
+#nom,
+#prenom,
+#email,
+#phone,
+#date,
+#password {
+  width: 200px;
+}
+
+#heureRendezVous {
+  width: 300px;
+}
+
+#confirmer,
+#annuler {
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 100px;
+}
+
+.conteneurNumeroTel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  height: 100px;
+}
+
+.conteneurConnexion {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 400px;
+}
+
+.formulaireConnexion {
+  margin: 20px;
+  border: gray solid 1px;
+  border-radius: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #D94350;
+  border-radius: 10px;
+  color: white;
+  border: none;
+}
+
+.boutonConnexion {
+  display: flex;
+  justify-content: center;
+}
+
+input:focus,
+textarea:focus {
+  border: solid 2px #D94350;
+  outline-style: none;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+a {
+  color: #D94350;
+}
+
+.active {
+  background-color: #D94350;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+}
+
+.conteneurVoitures {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+.titreServices {
+  margin: 50px;
+}
+
+/*.texteService {
+  flex-direction: column;
+  height: auto;
+  width: 600px;
+}*/
+
+.nomService,
+.paragrapheService {
+  /*font-size: 25px;*/
+  text-align: center;
+}
+
+.boutonSupprimerService,
+.boutonAjouterService,
+.ouvertOuFermer,
+.boutonAjouterVoiture,
+.boutonSupprimerVoiture,
+.approuverAvis,
+.supprimerAvis {
+  margin: 20px;
+}
+
+.ajoutService {
+  display: flex;
+  flex-direction: column;
+}
+
+.intituleService,
+#uploadImage,
+.buttonAjoutService,
+.buttonAnnulerService {
+  width: 125px;
+}
+
+#uploadImage {
+  width: 250px;
+}
+
+.buttonAjoutService,
+.buttonAnnulerService,
+#buttonSupprimerAvis,
+#buttonApprouverAvis {
+  margin: 20px;
+}
+
+.boutonDashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+  gap: 20px;
+}
+
+.supprimerService,
+.supprimerVoiture {
+  display: flex;
+  flex-direction: column;
+}
+
+.bouttonSupprimer,
+.bouttonAnnulerSupr {
+  margin: 20px;
+}
+
+#servicesSuppression,
+#voituresSuppression {
+  width: 250px;
+  text-align: center;
+}
+
+.justeLeBouttonEspacePro {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }

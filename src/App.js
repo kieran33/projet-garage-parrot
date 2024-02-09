@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Accueil from './pages/Accueil';
+import Contact from './pages/Contact';
+import "./App.css";
+import DetailsVoiture from './pages/DetailsVoiture';
+import SeConnecter from './pages/SeConnecter';
+import Occasions from './pages/Occasions';
+import DashboardAdmin from './pages/DashboardAdmin';
+import Fermeture from './pages/Fermeture';
+import DashboardEmploye from './pages/DashboardEmploye';
+import DataAvis from './components/DataAvis';
+import DataServices from './components/DataServices';
+import DataVoitures from './components/DataVoitures';
 
-function App() {
+const App = () => {
+
+  const emailUser = localStorage.getItem('email user');
+  const ouvertOuFermer = localStorage.getItem('ouvert ou fermer');
+  const passwordUser = localStorage.getItem('password user');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          {emailUser === null && passwordUser === null && ouvertOuFermer === 'fermer' ?
+            < Route path="/" element={<Fermeture />} />
+            :
+            <Route path="/" element={<Accueil />} />
+          }
+          <Route path="voiture/:id" element={<DetailsVoiture />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="voiture/:id/contact" element={<Contact />} />
+          <Route path="/occasions" element={<Occasions />} />
+          <Route path="/connexion" element={<SeConnecter />} />
+          <Route path="/dashboard-admin" element={<DashboardAdmin />} />
+          <Route path="/dashboard-employe" element={<DashboardEmploye />} />
+        </Routes>
+      </BrowserRouter>
+      <DataAvis />
+      <DataServices />
+      <DataVoitures />
+    </>
   );
-}
+};
 
 export default App;
